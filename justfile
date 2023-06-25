@@ -1,6 +1,7 @@
 alias r := run
 alias b := build
 alias d := dev
+alias i := install
 
 run *args:
 	cargo run -p clashctl -- {{ args }}
@@ -14,6 +15,9 @@ dev:
 
 build:
 	cargo build --release
+
+install:
+  cargo install --path ./clashctl
 
 release os: build
 	#!/usr/bin/env bash
